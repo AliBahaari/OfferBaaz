@@ -1,45 +1,71 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import { COLORS } from "@/constants/config";
+import Feather from "@expo/vector-icons/Feather";
+import { Tabs } from "expo-router";
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+type FeatherIconName = React.ComponentProps<typeof Feather>["name"];
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+const tabsList: {
+  name: string;
+  title: string;
+  icon: FeatherIconName;
+}[] = [
+  {
+    name: "profile",
+    title: "پروفایل من",
+    icon: "user",
+  },
+  {
+    name: "search",
+    title: "جستجو",
+    icon: "search",
+  },
+  {
+    name: "saved",
+    title: "ذخیره‌ها",
+    icon: "save",
+  },
+  {
+    name: "category",
+    title: "دسته‌بندی‌ها",
+    icon: "list",
+  },
+  {
+    name: "index",
+    title: "خانه",
+    icon: "home",
+  },
+];
 
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+        tabBarActiveTintColor: COLORS.primary,
+        tabBarStyle: {
+          height: 70,
+          paddingBottom: 5,
+          paddingTop: 5,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginTop: 5,
+          fontFamily: "IRANSansXFaNumBold",
+        },
+      }}
+    >
+      {tabsList.map((i, index) => (
+        <Tabs.Screen
+          key={index}
+          name={i.name}
+          options={{
+            title: i.title,
+            tabBarIcon: ({ color }) => (
+              <Feather size={25} name={i.icon} color={color} />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   );
 }

@@ -26,7 +26,7 @@ export default function SavedScreen() {
   const [selectedValue, setSelectedValue] = useState("");
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: COLORS.white }}>
       <View
         style={{
           paddingVertical: 22,
@@ -55,8 +55,8 @@ export default function SavedScreen() {
               width: 110,
               borderTopLeftRadius: 10,
               borderBottomLeftRadius: 10,
-              borderColor: COLORS.darkGray,
-              backgroundColor: COLORS.darkGray,
+              borderColor: COLORS.gray700,
+              backgroundColor: COLORS.gray700,
               fontFamily: "IRANSansXFaNumRegular",
               textAlign: "center",
               paddingHorizontal: 4,
@@ -68,8 +68,8 @@ export default function SavedScreen() {
             style={{
               flex: 1,
               borderWidth: 1,
-              borderColor: COLORS.lightGray,
-              backgroundColor: COLORS.lightGray,
+              borderColor: COLORS.gray200,
+              backgroundColor: COLORS.gray200,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               paddingVertical: 14,
@@ -107,7 +107,7 @@ export default function SavedScreen() {
               paddingVertical: 8,
               paddingHorizontal: 12,
               borderBottomWidth: 1,
-              borderBottomColor: COLORS.black27,
+              borderBottomColor: COLORS.black_alpha27,
             }}
           >
             <View
@@ -118,7 +118,7 @@ export default function SavedScreen() {
                   width: 110,
                   height: 110,
                   borderRadius: 12,
-                  backgroundColor: COLORS.darkGray,
+                  backgroundColor: COLORS.gray700,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -237,7 +237,7 @@ export default function SavedScreen() {
                   textDecorationLine: "line-through",
                   fontSize: 14,
                   fontFamily: "IRANSansXFaNumRegular",
-                  color: COLORS.gray,
+                  color: COLORS.grayText,
                 }}
               >
                 ۲,۷۰۰,۰۰۰

@@ -58,7 +58,7 @@ export default function UnRepeatedDiscountsCard() {
         <View
           style={{
             height: 80,
-            backgroundColor: COLORS.darkGray,
+            backgroundColor: COLORS.gray700,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -83,7 +83,7 @@ export default function UnRepeatedDiscountsCard() {
             borderRadius: 18,
             paddingHorizontal: 8,
             paddingVertical: 4,
-            backgroundColor: COLORS.darkGray,
+            backgroundColor: COLORS.gray700,
             width: 52,
             display: "flex",
             flexDirection: "row",
@@ -119,7 +119,7 @@ export default function UnRepeatedDiscountsCard() {
           <Text
             style={{
               fontFamily: "IRANSansXFaNumRegular",
-              color: COLORS.gray,
+              color: COLORS.grayText,
               fontSize: 15,
               textDecorationLine: "line-through",
             }}

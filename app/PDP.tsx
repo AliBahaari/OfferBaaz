@@ -25,7 +25,7 @@ const contentList = [
 
 export default function PDP() {
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: COLORS.white }}>
       {/* HEADER */}
       <View
         style={{
@@ -40,7 +40,7 @@ export default function PDP() {
       >
         <View
           style={{
-            backgroundColor: COLORS.lighterGray,
+            backgroundColor: COLORS.gray300,
             paddingVertical: 10,
             paddingHorizontal: 20,
             borderRadius: 36,
@@ -67,7 +67,7 @@ export default function PDP() {
       <View
         style={{
           height: 285,
-          backgroundColor: COLORS.darkGray,
+          backgroundColor: COLORS.gray700,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -90,13 +90,13 @@ export default function PDP() {
             paddingVertical: 8,
             paddingHorizontal: 12,
             borderRadius: 200,
-            backgroundColor: COLORS.gray23,
+            backgroundColor: COLORS.grayOverlay,
             alignSelf: "flex-end",
           }}
         >
           <Text
             style={{
-              color: COLORS.black93,
+              color: COLORS.black_alpha93,
               fontFamily: "IRANSansXFaNumMedium",
               fontSize: 22,
             }}
@@ -126,7 +126,7 @@ export default function PDP() {
           </Text>
           <Text
             style={{
-              color: COLORS.black60,
+              color: COLORS.black_alpha60,
               fontSize: 12,
               fontFamily: "IRANSansXFaNumRegular",
             }}
@@ -146,7 +146,7 @@ export default function PDP() {
                 borderBottomWidth: index !== contentList.length - 1 ? 1 : 0,
                 borderBottomColor:
                   index !== contentList.length - 1
-                    ? COLORS.black27
+                    ? COLORS.black_alpha27
                     : "transparent",
                 paddingVertical: 8,
               }}
@@ -172,7 +172,7 @@ export default function PDP() {
                   style={{
                     fontFamily: "IRANSansXFaNumRegular",
                     fontSize: 16,
-                    color: COLORS.black65,
+                    color: COLORS.black_alpha65,
                   }}
                 >
                   {i.title}
@@ -223,7 +223,7 @@ export default function PDP() {
             <FontAwesome name="whatsapp" size={20} />
             <Text
               style={{
-                color: COLORS.lightBlue,
+                color: COLORS.blue300,
                 fontSize: 12,
                 fontFamily: "IRANSansXFaNumRegular",
               }}
@@ -243,7 +243,7 @@ export default function PDP() {
             <FontAwesome name="instagram" size={20} />
             <Text
               style={{
-                color: COLORS.lightBlue,
+                color: COLORS.blue300,
                 fontSize: 12,
                 fontFamily: "IRANSansXFaNumRegular",
               }}
@@ -263,7 +263,7 @@ export default function PDP() {
             <FontAwesome name="globe" size={20} />
             <Text
               style={{
-                color: COLORS.lightBlue,
+                color: COLORS.blue300,
                 fontSize: 12,
                 fontFamily: "IRANSansXFaNumRegular",
               }}
@@ -281,9 +281,9 @@ export default function PDP() {
           flexDirection: "row-reverse",
           alignItems: "center",
           justifyContent: "space-between",
-          backgroundColor: COLORS.lighterBlue,
+          backgroundColor: COLORS.blue200,
           borderTopWidth: 1,
-          borderTopColor: COLORS.borderColor,
+          borderTopColor: COLORS.grayBorder,
         }}
       >
         <View
@@ -291,7 +291,7 @@ export default function PDP() {
             paddingVertical: 4,
             paddingHorizontal: 10,
             borderRadius: 200,
-            backgroundColor: COLORS.blue,
+            backgroundColor: COLORS.blue400,
           }}
         >
           <Text
@@ -307,7 +307,7 @@ export default function PDP() {
 
         <Text
           style={{
-            color: COLORS.darkBlue,
+            color: COLORS.blue600,
             fontSize: 28,
             fontFamily: "IRANSansXFaNumRegular",
           }}

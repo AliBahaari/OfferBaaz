@@ -1,3 +1,6 @@
+import DiscountCard from "@/components/DiscountCard";
+import MostlyDiscountedStoresCard from "@/components/MostlyDiscountedStoresCard";
+import MostlyFollowingStores from "@/components/MostlyFollowingStores";
 import UnRepeatedDiscountsCard from "@/components/UnRepeatedDiscountsCard";
 import { COLORS } from "@/constants/config";
 import Feather from "@expo/vector-icons/Feather";
@@ -49,7 +52,7 @@ export default function HomeScreen() {
   const [selectedValue, setSelectedValue] = useState("");
 
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: COLORS.white }}>
       {/* HEADER */}
       <View
         style={{
@@ -103,8 +106,8 @@ export default function HomeScreen() {
               width: 110,
               borderTopLeftRadius: 10,
               borderBottomLeftRadius: 10,
-              borderColor: COLORS.darkGray,
-              backgroundColor: COLORS.darkGray,
+              borderColor: COLORS.gray700,
+              backgroundColor: COLORS.gray700,
               fontFamily: "IRANSansXFaNumRegular",
               textAlign: "center",
               paddingHorizontal: 4,
@@ -116,8 +119,8 @@ export default function HomeScreen() {
             style={{
               flex: 1,
               borderWidth: 1,
-              borderColor: COLORS.lightGray,
-              backgroundColor: COLORS.lightGray,
+              borderColor: COLORS.gray200,
+              backgroundColor: COLORS.gray200,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               paddingVertical: 14,
@@ -147,7 +150,7 @@ export default function HomeScreen() {
               style={{
                 width: "24%",
                 height: 78,
-                backgroundColor: COLORS.lightGray,
+                backgroundColor: COLORS.gray200,
                 borderRadius: 10,
                 padding: 5,
                 display: "flex",
@@ -163,7 +166,7 @@ export default function HomeScreen() {
                   fontFamily: "IRANSansXFaNumRegular",
                   textAlign: "center",
                   fontSize: 10,
-                  color: COLORS.black70,
+                  color: COLORS.black_alpha70,
                 }}
               >
                 {i.title}
@@ -176,7 +179,7 @@ export default function HomeScreen() {
         <View
           style={{
             height: 140,
-            backgroundColor: COLORS.darkGray,
+            backgroundColor: COLORS.gray700,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -191,8 +194,7 @@ export default function HomeScreen() {
       {/* DISCOUNTS */}
       <View
         style={{
-          backgroundColor: COLORS.lightBlue,
-          paddingHorizontal: 10,
+          backgroundColor: COLORS.blue300,
           paddingVertical: 12,
         }}
       >
@@ -202,6 +204,7 @@ export default function HomeScreen() {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
+            paddingHorizontal: 10,
           }}
         >
           <View
@@ -246,8 +249,256 @@ export default function HomeScreen() {
           pagingEnabled
           showsHorizontalScrollIndicator={true}
           style={{ marginTop: 20 }}
+          contentContainerStyle={{
+            display: "flex",
+            flexDirection: "row-reverse",
+            gap: 10,
+            paddingHorizontal: 10,
+          }}
         >
           <UnRepeatedDiscountsCard />
+          <UnRepeatedDiscountsCard />
+          <UnRepeatedDiscountsCard />
+          <UnRepeatedDiscountsCard />
+          <UnRepeatedDiscountsCard />
+        </ScrollView>
+      </View>
+
+      {/* MOSTLY DISCOUNTED STORES */}
+      <View style={{ marginTop: 25 }}>
+        <View
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row-reverse",
+          }}
+        >
+          <View
+            style={{
+              borderTopLeftRadius: 30,
+              borderBottomLeftRadius: 30,
+              backgroundImage:
+                "linear-gradient(90deg, #053B94 33.65%, #213B67 100%)",
+              display: "flex",
+              flexDirection: "row-reverse",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 5,
+              paddingHorizontal: 18,
+              paddingVertical: 8,
+              boxShadow: "0px 4px 4px 0px #00000040",
+            }}
+          >
+            <FontAwesome6 name="percent" size={24} color={COLORS.yellow} />
+            <Text
+              style={{
+                color: COLORS.white,
+                fontSize: 20,
+                fontFamily: "IRANSansXFaNumDemiBold",
+                textShadowColor: "#00000040",
+                textShadowOffset: { width: 0, height: 4 },
+                textShadowRadius: 4,
+              }}
+            >
+              فروشگاه‌های پرتخفیف
+            </Text>
+          </View>
+
+          <View
+            style={{
+              borderRadius: 20,
+              backgroundColor: COLORS.gray300,
+              paddingHorizontal: 10,
+              paddingVertical: 4,
+              display: "flex",
+              flexDirection: "row-reverse",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 5,
+              marginLeft: 10,
+            }}
+          >
+            <Text style={{ fontSize: 10, fontFamily: "IRANSansXFaNumRegular" }}>
+              مشاهده همه
+            </Text>
+            <Feather name="chevron-left" size={10} />
+          </View>
+        </View>
+
+        <ScrollView
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={true}
+          style={{ marginTop: 20 }}
+          contentContainerStyle={{
+            display: "flex",
+            flexDirection: "row-reverse",
+            gap: 10,
+            paddingHorizontal: 10,
+          }}
+        >
+          <MostlyDiscountedStoresCard />
+        </ScrollView>
+      </View>
+
+      {/* MOSTLY FOLLOWING STORES */}
+      <View style={{ marginTop: 25 }}>
+        <View
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row-reverse",
+          }}
+        >
+          <View
+            style={{
+              borderTopLeftRadius: 30,
+              borderBottomLeftRadius: 30,
+              backgroundImage:
+                "linear-gradient(90deg, #053B94 33.65%, #213B67 100%)",
+              display: "flex",
+              flexDirection: "row-reverse",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 5,
+              paddingHorizontal: 18,
+              paddingVertical: 8,
+              boxShadow: "0px 4px 4px 0px #00000040",
+            }}
+          >
+            <FontAwesome6 name="store" size={24} color={COLORS.yellow} />
+            <Text
+              style={{
+                color: COLORS.white,
+                fontSize: 20,
+                fontFamily: "IRANSansXFaNumDemiBold",
+                textShadowColor: "#00000040",
+                textShadowOffset: { width: 0, height: 4 },
+                textShadowRadius: 4,
+              }}
+            >
+              فروشگاه‌های پر‌طرفدار
+            </Text>
+          </View>
+
+          <View
+            style={{
+              borderRadius: 20,
+              backgroundColor: COLORS.gray300,
+              paddingHorizontal: 10,
+              paddingVertical: 4,
+              display: "flex",
+              flexDirection: "row-reverse",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 5,
+              marginLeft: 10,
+            }}
+          >
+            <Text style={{ fontSize: 10, fontFamily: "IRANSansXFaNumRegular" }}>
+              مشاهده همه
+            </Text>
+            <Feather name="chevron-left" size={10} />
+          </View>
+        </View>
+
+        <ScrollView
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={true}
+          style={{ marginTop: 20 }}
+          contentContainerStyle={{
+            display: "flex",
+            flexDirection: "row-reverse",
+            gap: 10,
+            paddingHorizontal: 10,
+          }}
+        >
+          <MostlyFollowingStores />
+          <MostlyFollowingStores />
+          <MostlyFollowingStores />
+          <MostlyFollowingStores />
+          <MostlyFollowingStores />
+        </ScrollView>
+      </View>
+
+      {/* DISCOUNT CARDS */}
+      <View style={{ marginTop: 25 }}>
+        <View
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row-reverse",
+          }}
+        >
+          <View
+            style={{
+              borderTopLeftRadius: 30,
+              borderBottomLeftRadius: 30,
+              backgroundImage:
+                "linear-gradient(90deg, #053B94 33.65%, #213B67 100%)",
+              display: "flex",
+              flexDirection: "row-reverse",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 5,
+              paddingHorizontal: 18,
+              paddingVertical: 8,
+              boxShadow: "0px 4px 4px 0px #00000040",
+            }}
+          >
+            <FontAwesome6 name="ticket" size={24} color={COLORS.yellow} />
+            <Text
+              style={{
+                color: COLORS.white,
+                fontSize: 20,
+                fontFamily: "IRANSansXFaNumDemiBold",
+                textShadowColor: "#00000040",
+                textShadowOffset: { width: 0, height: 4 },
+                textShadowRadius: 4,
+              }}
+            >
+              فروشگاه‌های پر‌طرفدار
+            </Text>
+          </View>
+
+          <View
+            style={{
+              borderRadius: 20,
+              backgroundColor: COLORS.gray300,
+              paddingHorizontal: 10,
+              paddingVertical: 4,
+              display: "flex",
+              flexDirection: "row-reverse",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 5,
+              marginLeft: 10,
+            }}
+          >
+            <Text style={{ fontSize: 10, fontFamily: "IRANSansXFaNumRegular" }}>
+              مشاهده همه
+            </Text>
+            <Feather name="chevron-left" size={10} />
+          </View>
+        </View>
+
+        <ScrollView
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={true}
+          style={{ marginTop: 20 }}
+          contentContainerStyle={{
+            display: "flex",
+            flexDirection: "row-reverse",
+            gap: 10,
+            paddingHorizontal: 10,
+          }}
+        >
+          <DiscountCard />
         </ScrollView>
       </View>
     </ScrollView>

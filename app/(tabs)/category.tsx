@@ -108,12 +108,12 @@ const DATA = [
 
 export default function CategoryScreen() {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: COLORS.white }}>
       <TextInput
         style={{
           borderWidth: 1,
-          borderColor: COLORS.lightGray,
-          backgroundColor: COLORS.lightGray,
+          borderColor: COLORS.gray200,
+          backgroundColor: COLORS.gray200,
           borderRadius: 10,
           paddingVertical: 14,
           paddingHorizontal: 18,
@@ -135,7 +135,7 @@ export default function CategoryScreen() {
               paddingHorizontal: 12,
               paddingVertical: 15,
               borderBottomWidth: 1,
-              borderBottomColor: COLORS.black27,
+              borderBottomColor: COLORS.black_alpha27,
             }}
           >
             <View
@@ -152,14 +152,18 @@ export default function CategoryScreen() {
                 {item.title}
               </Text>
 
-              <Feather name="chevron-left" size={16} color={COLORS.black65} />
+              <Feather
+                name="chevron-left"
+                size={16}
+                color={COLORS.black_alpha65}
+              />
             </View>
 
             <Text
               style={{
                 fontFamily: "IRANSansXFaNumRegular",
                 fontSize: 10,
-                color: COLORS.black70,
+                color: COLORS.black_alpha70,
                 marginTop: 6,
               }}
             >

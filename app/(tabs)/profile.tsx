@@ -41,7 +41,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ height: 96, backgroundColor: COLORS.blue }} />
+      <View style={{ height: 96, backgroundColor: COLORS.blue400 }} />
       <View style={{ paddingHorizontal: 14, flex: 1 }}>
         <View
           style={{
@@ -58,7 +58,7 @@ export default function ProfileScreen() {
               width: 118,
               height: 118,
               borderRadius: 118,
-              backgroundColor: COLORS.lighterGray,
+              backgroundColor: COLORS.gray300,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -90,7 +90,7 @@ export default function ProfileScreen() {
                 style={{
                   fontFamily: "IRANSansXFaNumRegular",
                   fontSize: 14,
-                  color: COLORS.black55,
+                  color: COLORS.black_alpha55,
                 }}
               >
                 (210)
@@ -113,7 +113,7 @@ export default function ProfileScreen() {
             style={{
               paddingHorizontal: 15,
               paddingVertical: 8,
-              backgroundColor: COLORS.lighterGray,
+              backgroundColor: COLORS.gray300,
               borderRadius: 56,
               marginTop: 12,
             }}
@@ -201,7 +201,7 @@ export default function ProfileScreen() {
             position: "relative",
             top: -20,
             height: 1,
-            backgroundColor: COLORS.black27,
+            backgroundColor: COLORS.black_alpha27,
           }}
         />
 
@@ -212,7 +212,7 @@ export default function ProfileScreen() {
             paddingVertical: 2,
             paddingHorizontal: 12,
             borderRadius: 42,
-            backgroundColor: COLORS.lighterGray,
+            backgroundColor: COLORS.gray300,
             marginTop: 10,
           }}
         >
@@ -220,7 +220,7 @@ export default function ProfileScreen() {
             style={{
               fontFamily: "IRANSansXFaNumRegular",
               fontSize: 14,
-              color: COLORS.blue,
+              color: COLORS.blue400,
             }}
           >
             فروش ویژه
@@ -244,7 +244,7 @@ export default function ProfileScreen() {
                   width: cardSize,
                   height: 172,
                   borderRadius: 12,
-                  backgroundColor: COLORS.darkGray,
+                  backgroundColor: COLORS.gray700,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -320,7 +320,7 @@ export default function ProfileScreen() {
                     textDecorationLine: "line-through",
                     fontSize: 14,
                     fontFamily: "IRANSansXFaNumRegular",
-                    color: COLORS.gray,
+                    color: COLORS.grayText,
                   }}
                 >
                   ۲,۷۰۰,۰۰۰

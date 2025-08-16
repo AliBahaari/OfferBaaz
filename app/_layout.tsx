@@ -23,6 +23,11 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="PDP" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="nonRegisteredProfile"
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="register" options={{ headerShown: false }} />
     </Stack>
   );
 }

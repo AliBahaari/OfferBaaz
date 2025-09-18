@@ -42,4 +42,7 @@ export const COLORS = {
 
   // Purple
   purple: "#4147D5",
+
+  // Red
+  red: "#DB5461",
 };

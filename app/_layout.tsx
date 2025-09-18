@@ -1,6 +1,9 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { ActivityIndicator } from "react-native";
+
+const QUERY_CLIENT = new QueryClient();
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -20,14 +23,17 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="PDP" options={{ headerShown: false }} />
-      <Stack.Screen
-        name="nonRegisteredProfile"
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen name="register" options={{ headerShown: false }} />
-    </Stack>
+    <QueryClientProvider client={QUERY_CLIENT}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="PDP" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="nonRegisteredProfile"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="register" options={{ headerShown: false }} />
+        <Stack.Screen name="userRegister" options={{ headerShown: false }} />
+      </Stack>
+    </QueryClientProvider>
   );
 }

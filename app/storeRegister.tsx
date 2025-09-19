@@ -3,7 +3,7 @@ import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
 import { ScrollView, Text, TextInput, View } from "react-native";
 
-export default function Register() {
+export default function StoreRegister() {
   const [selectedBusinessType, setSelectedBusinessType] =
     useState("selectBusinessType");
   const [selectedCity, setSelectedCity] = useState("selectCity");

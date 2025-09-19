@@ -15,6 +15,11 @@ const tabsList: {
     icon: "user",
   },
   {
+    name: "myStore",
+    title: "مغازه من",
+    icon: "shopping-cart",
+  },
+  {
     name: "search",
     title: "جستجو",
     icon: "search",
@@ -48,7 +53,7 @@ export default function TabsLayout() {
           paddingTop: 5,
         },
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 10,
           marginTop: 5,
           fontFamily: "IRANSansXFaNumBold",
         },

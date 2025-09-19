@@ -1,6 +1,7 @@
 import { COLORS } from "@/constants/config";
 import { useUserRegister } from "@/requests/mutations/useUserRegister";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { z } from "zod";
@@ -19,8 +20,9 @@ const schema = z.object({
   username: z.string("نباید خالی باشد").min(8, "باید حداقل 8 کاراکتر باشد"),
 });
 
-export default function Register() {
+export default function UserRegister() {
   const { mutate: userRegisterMutate } = useUserRegister();
+  const router = useRouter();
 
   const {
     control,
@@ -34,10 +36,12 @@ export default function Register() {
   function onSubmit(values: z.infer<typeof schema>) {
     userRegisterMutate(values, {
       onSuccess(data) {
-        console.log(data);
+        if (data?.status === 201) {
+          router.push("/userLogin");
+        }
       },
       onError(error) {
-        console.log(error);
+        console.error("Registration failed:", error);
       },
     });
   }
